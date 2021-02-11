@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     private val tag = "TAG_Test"
 
-    @Named("hi2")
+    @Named("hi")
     @Inject
     lateinit var strings : Set<String>
 
@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity() {
         component.inject(this)
 
         makeLogs()
+
+        Log.i(tag,"value map1 : ${component.setMap()}")
+        Log.i(tag,"value map2 : ${component.setMap2()}")
 
         recyclerView.adapter = adapter
 

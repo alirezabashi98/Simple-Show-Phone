@@ -1,5 +1,6 @@
 package com.example.simple.show.photos
 
+import android.util.Log
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named
@@ -8,10 +9,9 @@ import javax.inject.Named
 class CustomModule {
 
     @Provides
-    fun createCustomClass(@Named("hi") strings: Set<String>): CustomClass = CustomClass(strings)
-//    {
-//        Log.i("TAG_Test","value string : $strings")
-//        return CustomClass(strings)
-//    }
+    fun createCustomClass(@Named("hi2") strings: Set<String>): CustomClass {
+        Log.i("TAG_Test","value string : $strings")
+        return CustomClass(strings)
+    }
 
 }

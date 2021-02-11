@@ -5,8 +5,12 @@ import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
 
-@Component(modules = [AdapterModule::class,CustomModule::class])
+@Component(modules = [AdapterModule::class, CustomModule::class])
 interface AdapterComponent {
+
+    fun setMap(): Map<String, String>
+
+    fun setMap2(): Map<Class<*>, String>
 
     @Named("hi")
     fun setStrings(): Set<String>
@@ -14,7 +18,7 @@ interface AdapterComponent {
     @Named("hi2")
     fun setStrings2(): Set<String>
 
-    fun buildCustom():CustomClass
+    fun buildCustom(): CustomClass
 
     fun buildAdapter(): Adapter
 
