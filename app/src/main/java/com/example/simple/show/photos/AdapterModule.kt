@@ -8,9 +8,21 @@ import com.bumptech.glide.RequestManager
 import com.bumptech.glide.request.RequestOptions
 import dagger.Module
 import dagger.Provides
+import dagger.multibindings.IntoSet
+import javax.inject.Named
 
 @Module
 class AdapterModule {
+
+    @Named("hi")
+    @Provides
+    @IntoSet
+    fun intoSet(): String = "hi"
+
+    @Named("hi2")
+    @Provides
+    @IntoSet
+    fun intoSet2(): String = "hello ali"
 
     @Provides
     fun provideOptions(): RequestOptions =
